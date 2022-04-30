@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<form method="POST" action="{{url_for("admin.add_book")}}">
+    {{ form.hidden_tag() }}
+
+    {{form.name.label}}
+    {{form.name}}
+    {{form.author.label}}
+    {{form.author}}
+    {{form.year_published.label}}
+    {{form.year_published}}
+    {{form.type.label}}
+    {{form.type}}
+
+    
+    <input type="submit" value="Add Book">
+</form>
+{% endblock content %}

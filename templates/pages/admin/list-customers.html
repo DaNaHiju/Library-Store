@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<form method="GET">
+    
+    <input type="text" placeholder="Search Customers" name="q" />
+
+    <input type="submit" value="Search"/>
+
+</form>
+    
+
+{% for customer in customers %}
+
+
+<div>Name : {{customer.name}}</div>
+
+<div>City : {{customer.city}}</div>
+<div>Age : {{customer.age}}</div>
+
+<a href="{{url_for("admin.delete_customer", id=customer.id)}}">Delete customer</a>
+
+
+<hr>
+
+
+
+{% endfor %}
+
+{% endblock content %}

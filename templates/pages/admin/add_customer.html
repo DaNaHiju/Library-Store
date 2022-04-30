@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<form method="POST" action="{{url_for("admin.add_customer")}}">
+    {{ form.hidden_tag() }}
+
+    {{form.name.label}}
+    {{form.name}}
+    {{form.city.label}}
+    {{form.city}}
+    {{form.age.label}}
+    {{form.age}}
+    
+    <input type="submit" value="Add Customer">
+</form>
+{% endblock content %}

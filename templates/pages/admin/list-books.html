@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<form method="GET">
+    
+    <input type="text" placeholder="Search Books" name="q" />
+
+    <input type="submit" value="Search"/>
+
+</form>
+
+
+{% for book in books %}
+
+
+<div>Name : {{book.name}}</div>
+
+<div>Year : {{book.year_published}}</div>
+<div>Auhor : {{book.author}}</div>
+
+{% if book.type.value == "up_to_10_days" %}
+<div>Type : Upto 10 Days</div>
+{% elif book.type.value == "up_to_5_days"%}
+<div>Type : Upto 5 Days</div>
+{% elif book.type.value == "up_to_2_days"%}
+<div>Type : Upto 2 Days</div>
+{% endif %}
+<a href="{{url_for("admin.delete_book", id=book.id)}}">Delete Book</a>
+<hr>
+
+
+
+{% endfor %}
+
+{% endblock content %}

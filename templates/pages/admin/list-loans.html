@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{% for loan in loans %}
+
+
+<div>
+    <div>{{loan.books}}</div>
+    <div>{{loan.customers}}</div>
+    <div>{{loan.loan_date}}</div>
+    <div>{{loan.return_date}}</div>
+
+</div>
+
+<hr>
+
+
+
+{% endfor %}
+
+{% endblock content %}

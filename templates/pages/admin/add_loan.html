@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<form method="POST" action="{{url_for("admin.add_loan")}}">
+    {{ form.hidden_tag() }}
+
+    {{form.book.label}}
+    {{form.book}}
+    {{form.customer.label}}
+    {{form.customer}}
+    
+    <input type="submit" value="Add Loan">
+</form>
+{% endblock content %}
